@@ -1,0 +1,43 @@
+package br.com.ex1.rest;
+
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+
+@Path("/Ex1Rest")
+public class Ex1Rest {
+	
+	@GET
+	@Path("show={param1}/{param2}/{param3}")
+	public String  show(@PathParam("param1")String nome,@PathParam("param2")String idade,@PathParam("param3")String prg){
+		String out="Eu"+nome+",trabalho e estudo, tenho"+idade+"anos"
+		            +"e adoro programar em "+prg;
+		return out;
+		
+		FileWriter arq = new FileWriter("C:/Documents and Settings/Juninho/SD/Ex1Rest/registro.txt",true);
+	    PrintWriter gravarArq = new PrintWriter(arq);
+	     
+	       gravarArq.println(out);
+	       gravarArq.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+	       gravarArq.println("");
+	       gravarArq.flush();
+	       gravarArq.close();
+	}
+	
+	@GET
+	@Path("imc={param1}/{param2}")
+	public String imc(@PathParam("param1")float altura,@PathParam("param2")int kg){
+		
+		
+		String  peso=String.valueOf((altura*altura)/kg);
+		String imc="Eu tenho"+altura+"de altura e tenho"+kg
+				    +"eu"+peso+"do peso";
+		
+		
+		return imc;
+	}
+
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action = "Ex1Rest" method="get">
+
+<input type="text" name="nome" value="Jão"/>
+<input type="text" name="idade" value="23"/>
+<input type="text" name="linguagem" value="c#"/>
+
+
+<input type="number" name="altura" value=1.90/>
+<input type="number" name="kg"     value=90/>
+                              
+
+
+
+
+</form>
+
+</body>
+</html>
